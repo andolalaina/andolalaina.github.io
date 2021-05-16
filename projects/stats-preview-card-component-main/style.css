@@ -1,0 +1,220 @@
+:root {
+    --main-bg: hsl(233, 47%, 7%);
+    --card-bg: hsl(244, 38%, 16%);
+    --accent: hsl(277, 64%, 61%);
+    --white: hsl(0, 0%, 100%);
+    --main-paragraph: hsla(0, 0%, 100%, 0.75);
+    --stat-headings: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+    font-size: 15px;
+}
+
+body {
+    margin: 0;
+    background-color: var(--main-bg);
+}
+
+/* mobile */
+
+.container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.card {
+    background-color: var(--card-bg);
+    display: flex;
+    flex-flow: row wrap-reverse;
+    max-width: 80%;
+    text-align: center;
+    border-radius: 1% ;
+}
+
+.right, .illustration {
+    border-radius: 0 1% 1% 0;
+}
+
+.text, .text>a, .credit {
+    font-size: .75rem;
+    font-style: normal;
+    font-family: "Inter";
+    font-weight: 400;
+    color: var(--stat-headings);
+}
+
+.text>a {
+    text-decoration: none;
+    color: hsl(228, 45%, 44%);
+    font-weight: 700;
+}
+
+.text>em {
+    font-style: none;
+}
+
+.text>h1, em {
+    font-size: 2rem;
+    font-style: normal;
+    font-family: "Inter";
+    font-weight: 700;
+    color: var(--white);
+}
+
+em {
+    color: var(--accent);
+}
+
+.text>p {
+    font-family: "Lexend Deca";
+    font-weight: 400;
+    line-height: 2;
+    color: var(--stat-headings);
+    margin: auto 5%;
+}
+
+.insights {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    margin: 5% auto;
+}
+
+.analytics {
+    margin: 2.5% auto;
+}
+
+.analytics>h2 {
+    font-size: 1.5rem;
+    font-family: "Inter";
+    font-weight: 700;
+    color: var(--white);
+    margin: .5rem 0;
+}
+
+.analytics>p {
+    font-size: .75rem;
+    font-family: 'Inter';
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--stat-headings);
+    margin: .25rem 0;
+}
+
+
+/* right card */
+.right {
+    background-color: var(--accent);
+    width: 100%;
+    min-height: 30%;
+}
+
+.illustration {
+    content: url('images/image-header-mobile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-size: 100% 100%; */
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+
+.attribution {
+    position:fixed;
+    bottom: 1vh;
+    width: 100%;
+    text-align: center;
+}
+
+.credit {
+    opacity: 20%;
+    filter: blur(1px);
+    transition: opacity filter;
+    transition-duration: .2s;
+}
+
+.credit:hover {
+    opacity: 100%;
+    filter: blur(0);
+}
+
+.credit>a {
+    color: var(--accent);
+    font-size: .75rem;
+}
+
+
+/* laptop */
+@media only screen and (min-width: 1024px) {
+
+    .analytics {
+        margin: auto;
+    }
+    
+    .card {
+        flex-flow: row;
+        justify-content: space-between;
+        min-width: 80%;
+        text-align: start;
+    }
+    
+    /* left card */
+    .left {
+        width: 50%;
+    }
+    
+    .text {
+        padding: 7.5% 12.5% 10% 12.5%;
+    }
+    
+    .insights {
+        padding: 0% 15% 2.5% 12.5%;
+    }
+    
+    .text>h1, em {
+        font-size: 2.5rem;
+    }
+    
+    .text>p {
+        margin-left: 0;
+        margin-right: 15%;
+    }
+    
+    .insights {
+        flex-flow: row;
+        justify-content: space-between;
+        margin-top: 0;
+    }
+    
+    .analytics {
+        margin-left: 0;
+    }
+
+    .analytics>h2 {
+        margin: 0;
+    }
+    
+    .analytics>p {
+        margin: 0;
+    }
+    
+    
+    /* right card */
+    .right {
+        width: 50%;
+    }
+    
+    .illustration {
+        content: url('images/image-header-desktop.jpg');
+    }
+
+    .credit {
+        opacity: 100%;
+        filter: blur(0);
+    }
+    
+}
